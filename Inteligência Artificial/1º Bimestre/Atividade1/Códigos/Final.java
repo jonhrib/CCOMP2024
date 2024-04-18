@@ -2,7 +2,6 @@ package Conjunto;
 import java.util.Scanner;
 
 import Conjunto.Node;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -68,6 +67,7 @@ public class Final {
 		System.out.print("         Grafo inserido, em pré ordem: "); //impressão de título
 		imprime(raiz);
 		System.out.println();
+		
 		int x = 1;
 		while (x < 3 && x > 0) { //vai repetir o menu até que seja pressionado o número 3
 			System.out.println("-----------------------------------------------------------------------------"); //impressão de título
@@ -160,13 +160,17 @@ public class Final {
 						}
 					} while (es != 2);
 				break;
-					
+				case 3:
+					System.out.println("-----------------------------------------------------------------------------"); //título impresso ao final do programa
+					System.out.println("             Obrigado por utilizar... Finalizando aplicação!");
+					System.out.println("-----------------------------------------------------------------------------");
+				break;
+				default:
+					System.out.println("\u001B[31mEscolha incorreta... Finalizando aplicação\u001B[0m");
+					System.out.println("-----------------------------------------------------------------------------");
+				break;
 			}
 		}
-		
-		System.out.println("-----------------------------------------------------------------------------"); //título impresso ao final do programa
-		System.out.println("Obrigado!");
-		System.out.println("-----------------------------------------------------------------------------");
 		
 	}
 	
@@ -205,6 +209,7 @@ public class Final {
 	public static boolean busca(Node raiz, char nome, int cod) { //método de busca
 		
 		if (cod == 1) { //busca em profundidade
+			
 			if (raiz == null) {
 		        return false; // se o início for nulo, não buscamos
 		    }
@@ -247,6 +252,7 @@ public class Final {
 	            if (atual.esquerda != null) { //adiciona o filho esquerdo ao final da fila
 	                filab.offer(atual.esquerda);
 	            }
+	            
 	            if (atual.direita != null) { //adiciona o filho direito ao final da fila
 	                filab.offer(atual.direita);
 	            }
