@@ -31,7 +31,7 @@ public class Main {
 		s.addaresta(b,5);
 		s.addaresta(c,15);
 		a.addaresta(g,10);
-		b.addaresta(g,5);
+		b.addaresta(g,16);
 		c.addaresta(g,10);
 		
 		nos.add(s);nos.add(a);nos.add(b);nos.add(c);nos.add(g); // adiciona todos os nós ao array de nós
@@ -148,15 +148,18 @@ public class Main {
 					ligação.destino.custo = custoN; // o custo do destino da aresta recebe o custo novo
 					fila.offer(ligação.destino); // adicionamos o destino a fila
 				}
-			}
-			
-			for (Aresta ligação: primeiro.ligações) { // serve para verificar se o custo atual de alguma ligação é menor que aquela que existe na fila
-				int custoN = ligação.custo; // o custo novo é o custo do nó atual somado ao custo da aresta
-				if (custoN < ligação.destino.custo) { // se esse novo custo for menor que o custo do destino
-					ligação.destino.custo = custoN; // o custo do destino é modificado pelo atual custo
-					//fila.offer(ligação.destino);
+				else if (custoN < ligação.destino.custo) {
+					ligação.destino.custo = custoN;
 				}
 			}
+			
+//			for (Aresta ligação: primeiro.ligações) { // serve para verificar se o custo atual de alguma ligação é menor que aquela que existe na fila
+//				int custoN = ligação.custo; // o custo novo é o custo do nó atual somado ao custo da aresta
+//				if (custoN < ligação.destino.custo) { // se esse novo custo for menor que o custo do destino
+//					ligação.destino.custo = custoN; // o custo do destino é modificado pelo atual custo
+//					//fila.offer(ligação.destino);
+//				}
+//			}
 //			else {
 //				if (!primeiro.filhos.isEmpty()) {
 //					for (Node no : primeiro.filhos) {
