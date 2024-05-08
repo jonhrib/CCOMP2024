@@ -106,8 +106,9 @@ public class Main {
 
         //impressões
         System.out.println("-------------------------------------------------");
-        System.out.println("\u001B[\u001B[33m Atividade de IA - Entropia e Ganho de Informação\u001B[0m");
+        System.out.println("\u001B[\u001B[33mAtividade de IA - Entropia e Ganho de Informação\u001B[0m");
         System.out.println("-------------------------------------------------");
+
         for (Atributo atributo : outlook) { //percorre todos os atributos de outlook
             ArrayList<Boolean> valores = atributo.getValores(); //coloca em um ArrayList, os valores do atributo, true e false
             System.out.print("Valores O: ");
@@ -116,7 +117,9 @@ public class Main {
             }
             System.out.println();
         }
+
         System.out.println("-------------------------------------------------");
+
         for (Atributo atributo : temperature) { //percorre todos os atributos de temperature
             ArrayList<Boolean> valores = atributo.getValores();
             System.out.print("Valores T: ");
@@ -125,7 +128,9 @@ public class Main {
             }
             System.out.println();
         }
+
         System.out.println("-------------------------------------------------");
+
         for (Atributo atributo : humidity) { //percorre todos os atributos de humidity
             ArrayList<Boolean> valores = atributo.getValores();
             System.out.print("Valores H: ");
@@ -134,7 +139,9 @@ public class Main {
             }
             System.out.println();
         }
+
         System.out.println("-------------------------------------------------");
+
         for (Atributo atributo : windy) { //percorre todos os atributos de windy
             ArrayList<Boolean> valores = atributo.getValores();
             System.out.print("Valores W: ");
@@ -143,6 +150,7 @@ public class Main {
             }
             System.out.println();
         }
+
         System.out.println("-------------------------------------------------");
 
         //---------------------------------
@@ -156,12 +164,14 @@ public class Main {
             for (Boolean valor : valores) {
                 if (valor) { //se o valor for true (yes)
                     yes++;
-                } else { //se o valor for false (no)
+                } 
+                else { //se o valor for false (no)
                     no++;
                 }
             }
         }
 
+        //entropia geral
         int total = yes + no; //a quantidade total de valores no atributo
         double eG = entropiaGeral(total, yes, no); // chama a função que calcula a entropia geral, passando o total de valores, a quantidade de yes e a qtd de no
         System.out.println("Entropia Geral: " + eG);
@@ -210,8 +220,8 @@ public class Main {
         for (int i = 0; i < IGs.size(); i++) { //percorre os ganhos de informação da lista
             double ganho = IGs.get(i); //ganho recebe cada ig
             if (ganho > maiorg) { //se o ganho atual for maior que o maior ganho até agora
-                maiorg = ganho; //armazena-se o maior ganho
                 indmaior = i; //armazenamos o índice do maior ganho
+                maiorg = ganho; //armazena-se o maior ganho
             }
         }
         System.out.println("-------------------------------------------------");
@@ -232,26 +242,26 @@ public class Main {
         for (Atributo atributo : atributos) { //percorre todos os atributos
             ArrayList<Boolean> valores = atributo.getValores(); //uma lista recebe todos os valores do atributo
             int total = valores.size(); //total = a quantidade de valores neste atributo
-            int totalTrue = 0; //quantidade de valores yes
+            int totalYes = 0; //quantidade de valores yes
     
             // conta o número de yes
             for (Boolean valor : valores) { //percorre os valores do atributo 
                 if (valor) { //se o valor é verdadeiro, ou seja, yes
-                    totalTrue++;
+                    totalYes++;
                 }
             }
     
             // calculaa proporção de yes ou no
-            double pTrue = (double) totalTrue / total; //proporção de yes
-            double pFalse = 1.0 - pTrue; //proporção de no
+            double pYes = (double) totalYes / total; //proporção de yes
+            double pNo = 1.0 - pYes; //proporção de no
     
             // calcula a entropia mesmo
             double e = 0;
-            if (pTrue != 0) { //se a proporção de yes for diferente de 0, se for igual não faz nada, logo, continua zero aqui
-                e -= pTrue * (Math.log(pTrue) / Math.log(2)); //tem o menos no começo da fórmula
+            if (pYes != 0) { //se a proporção de yes for diferente de 0, se for igual não faz nada, logo, continua zero aqui
+                e -= pYes * (Math.log(pYes) / Math.log(2)); //tem o menos no começo da fórmula
             }
-            if (pFalse != 0) { //se a proporção de no for diferente de 0, se for igual não faz nada, logo, continua zero aqui
-                e -= pFalse * (Math.log(pFalse) / Math.log(2)); //tem o menos no meio da fórmula, antes desse bloco
+            if (pNo != 0) { //se a proporção de no for diferente de 0, se for igual não faz nada, logo, continua zero aqui
+                e -= pNo * (Math.log(pNo) / Math.log(2)); //tem o menos no meio da fórmula, antes desse bloco
             }
     
             // soma a entropia de cada atributo multiplicado pelo total de valores dele dividido pela qauntidade total de valores
@@ -263,16 +273,16 @@ public class Main {
 
     static double entropiaGeral(int total, int yes, int no) { //função que calcula a entropia geral de todas as classes
         // calculando a proporção de yes e no
-        double pTrue = (double) yes / total; //calcula a proporção de yes
-        double pFalse = (double) no / total; //calcula a proporção de no
+        double pYes = (double) yes / total; //calcula a proporção de yes
+        double pNo = (double) no / total; //calcula a proporção de no
     
         // calculando a entropia geral
         double entropia = 0;
-        if (pTrue != 0) {
-            entropia -= pTrue * (Math.log(pTrue) / Math.log(2)); //tem o menos no começo da fórmula
+        if (pYes != 0) {
+            entropia -= pYes * (Math.log(pYes) / Math.log(2)); //tem o menos no começo da fórmula
         }
-        if (pFalse != 0) {
-            entropia -= pFalse * (Math.log(pFalse) / Math.log(2)); //tem o menos no meio da fórmula, antes desse bloco
+        if (pNo != 0) {
+            entropia -= pNo * (Math.log(pNo) / Math.log(2)); //tem o menos no meio da fórmula, antes desse bloco
         }
     
         return entropia; //retorna a entropia da totalidade
