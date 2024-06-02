@@ -4,74 +4,92 @@ public class Main {
     public static void main(String args []) {
         Grafo grafo = new Grafo(); //cria-se o grafo
 
-        // adicionamos os nós (pontos nas ruas) com suas coordenadas, retiradas do Maps, a um grafo
-        grafo.adicionarNo(new No("1", -23.54950, -51.46963));
-        grafo.adicionarNo(new No("2", -23.55220, -51.46940));
-        grafo.adicionarNo(new No("3", -23.55194, -51.46921));
-        grafo.adicionarNo(new No("4", -23.55173, -51.46904));
-        grafo.adicionarNo(new No("5", -23.55154, -51.46893));
-        grafo.adicionarNo(new No("6", -23.55143, -51.46884));
-        grafo.adicionarNo(new No("7", -23.55130, -51.46872));
-        grafo.adicionarNo(new No("8", -23.55122, -51.46863));
-        grafo.adicionarNo(new No("9", -23.55114, -51.46857));
-        grafo.adicionarNo(new No("10", -23.55102, -51.46845));
-        grafo.adicionarNo(new No("11", -23.55088, -51.46835));
-        grafo.adicionarNo(new No("12", -23.55078, -51.46826));
-        grafo.adicionarNo(new No("13", -23.55067, -51.46817));
-        grafo.adicionarNo(new No("14", -23.55054, -51.46810));
-        grafo.adicionarNo(new No("15", -23.55044, -51.46803));
-        grafo.adicionarNo(new No("16", -23.55034, -51.46796));
-        grafo.adicionarNo(new No("17", -23.55022, -51.46791));
-        grafo.adicionarNo(new No("18", -23.55010, -51.46785));
-        grafo.adicionarNo(new No("19", -23.54999, -51.46779));
-        grafo.adicionarNo(new No("20", -23.54987, -51.46775));
-        grafo.adicionarNo(new No("21", -23.54974, -51.46770));
-        grafo.adicionarNo(new No("22", -23.54961, -51.46765));
-        grafo.adicionarNo(new No("23", -23.54949, -51.46760));
-        grafo.adicionarNo(new No("24", -23.54936, -51.46755));
-        grafo.adicionarNo(new No("25", -23.54924, -51.46752));
-        grafo.adicionarNo(new No("26", -23.54911, -51.46749));
-        grafo.adicionarNo(new No("27", -23.54898, -51.46745));
-        grafo.adicionarNo(new No("28", -23.54884, -51.46742));
-        grafo.adicionarNo(new No("29", -23.54871, -51.46739));
-        grafo.adicionarNo(new No("30", -23.54857, -51.46737));
-        grafo.adicionarNo(new No("31", -23.54844, -51.46734));
-        grafo.adicionarNo(new No("32", -23.54831, -51.46732));
-        grafo.adicionarNo(new No("33", -23.54818, -51.46729));
-        grafo.adicionarNo(new No("34", -23.54804, -51.46727));
-        grafo.adicionarNo(new No("35", -23.54790, -51.46726));
-        grafo.adicionarNo(new No("36", -23.54776, -51.46724));
-        grafo.adicionarNo(new No("37", -23.54763, -51.46722));
-        grafo.adicionarNo(new No("38", -23.54749, -51.46721));
-        grafo.adicionarNo(new No("39", -23.54735, -51.46719));
-        grafo.adicionarNo(new No("40", -23.54721, -51.46718));
-        grafo.adicionarNo(new No("41", -23.54706, -51.46716));
-        grafo.adicionarNo(new No("42", -23.54692, -51.46715));
-        grafo.adicionarNo(new No("43", -23.54678, -51.46714));
-        grafo.adicionarNo(new No("44", -23.54664, -51.46713));
-        grafo.adicionarNo(new No("45", -23.54650, -51.46712));
-        grafo.adicionarNo(new No("46", -23.54636, -51.46711));
-        grafo.adicionarNo(new No("47", -23.54622, -51.46711));
-        grafo.adicionarNo(new No("48", -23.54608, -51.46710));
-        grafo.adicionarNo(new No("49", -23.54594, -51.46709));
-        grafo.adicionarNo(new No("50", -23.54579, -51.46708));
-        grafo.adicionarNo(new No("51", -23.54565, -51.46708));
-        grafo.adicionarNo(new No("52", -23.54551, -51.46707));
-        grafo.adicionarNo(new No("53", -23.54537, -51.46707));
-        grafo.adicionarNo(new No("54", -23.54523, -51.46706));
-        grafo.adicionarNo(new No("55", -23.54509, -51.46706));
-        grafo.adicionarNo(new No("56", -23.54494, -51.46705));
-        grafo.adicionarNo(new No("57", -23.54480, -51.46705));
-        grafo.adicionarNo(new No("58", -23.54466, -51.46704));
-        grafo.adicionarNo(new No("59", -23.54452, -51.46704));
-        grafo.adicionarNo(new No("60", -23.54438, -51.46703));
-        grafo.adicionarNo(new No("61", -23.54424, -51.46703));
-        grafo.adicionarNo(new No("62", -23.54410, -51.46702));
-        grafo.adicionarNo(new No("63", -23.54396, -51.46702));
-        grafo.adicionarNo(new No("64", -23.54382, -51.46701));
-        grafo.adicionarNo(new No("65", -23.54382, -51.46701));
-        grafo.adicionarNo(new No("66", -23.54382, -51.46701));
-        grafo.adicionarNo(new No("67", -23.54382, -51.46701)); 
+    // adicionamos os nós (pontos nas ruas) com suas coordenadas, retiradas do Maps, a um grafo
+    grafo.adicionarNo(new No("1", -23.54950, -51.45635));
+	grafo.adicionarNo(new No("2", -23.55061, -51.45602));
+	grafo.adicionarNo(new No("3", -23.55174, -51.45571));
+	grafo.adicionarNo(new No("4", -23.54799, -51.45834));
+	grafo.adicionarNo(new No("5", -23.54868, -51.45780));
+	
+	grafo.adicionarNo(new No("6", -23.54977, -51.45751));
+	grafo.adicionarNo(new No("7", -23.55089, -51.45717));
+	grafo.adicionarNo(new No("8", -23.55197, -51.45684));
+	grafo.adicionarNo(new No("9", -23.55312, -51.45655));
+	grafo.adicionarNo(new No("10", -23.55415, -51.45627));
+	
+	grafo.adicionarNo(new No("11", -23.54790, -51.45924));
+	grafo.adicionarNo(new No("12", -23.54868, -51.45896));
+	grafo.adicionarNo(new No("13", -23.55005, -51.45863));
+	grafo.adicionarNo(new No("14", -23.55119, -51.45830));
+	grafo.adicionarNo(new No("15", -23.55231, -51.45796));
+	
+	grafo.adicionarNo(new No("16", -23.55341, -51.45768));
+	grafo.adicionarNo(new No("17", -23.55448, -51.45737));
+	grafo.adicionarNo(new No("18", -23.54838, -51.46000));
+	//grafo.adicionarNo(new No("19", -23.54950, -51.46963));
+	grafo.adicionarNo(new No("20", -23.54922, -51.46012));
+	
+	grafo.adicionarNo(new No("21", -23.55031, -51.45978));
+	grafo.adicionarNo(new No("22", -23.55120, -51.45957));
+	grafo.adicionarNo(new No("23", -23.55143, -51.45922));
+	grafo.adicionarNo(new No("24", -23.55177, -51.45940));
+	grafo.adicionarNo(new No("25", -23.55258, -51.45912));
+	
+	grafo.adicionarNo(new No("26", -23.55368, -51.45880));
+	grafo.adicionarNo(new No("27", -23.55477, -51.45850));
+	grafo.adicionarNo(new No("28", -23.54788, -51.46097));
+	grafo.adicionarNo(new No("29", -23.54949, -51.46122));
+	grafo.adicionarNo(new No("30", -23.55060, -51.46091));
+	
+	grafo.adicionarNo(new No("31", -23.55133, -51.46071));
+	grafo.adicionarNo(new No("32", -23.55213, -51.46042));
+	grafo.adicionarNo(new No("33", -23.55285, -51.46024));
+	grafo.adicionarNo(new No("34", -23.55393, -51.45995));
+	//grafo.adicionarNo(new No("35", -23.54950, -51.46963));
+	
+	grafo.adicionarNo(new No("36", -23.55500, -51.45964));
+	grafo.adicionarNo(new No("37", -23.55608, -51.45933));
+	grafo.adicionarNo(new No("38", -23.54741, -51.46183));
+	grafo.adicionarNo(new No("39", -23.54861, -51.46259));
+	grafo.adicionarNo(new No("40", -23.54975, -51.46233));
+	
+	grafo.adicionarNo(new No("41", -23.55086, -51.46199));
+	grafo.adicionarNo(new No("42", -23.55158, -51.46160));
+	grafo.adicionarNo(new No("43", -23.55207, -51.46190));
+	grafo.adicionarNo(new No("44", -23.55231, -51.46150));
+	grafo.adicionarNo(new No("45", -23.55313, -51.46139));
+	
+	//parei aqui
+	
+	grafo.adicionarNo(new No("46", -23.55420, -51.46107));
+	//grafo.adicionarNo(new No("47", -23.54950, -51.46963));
+	grafo.adicionarNo(new No("48", -23.55528, -51.46077));
+	grafo.adicionarNo(new No("49", -23.54897, -51.46380));
+	grafo.adicionarNo(new No("50", -23.55004, -51.46348));
+	
+	grafo.adicionarNo(new No("51", -23.55115, -51.46318));
+	grafo.adicionarNo(new No("52", -23.55227, -51.46285));
+	grafo.adicionarNo(new No("53", -23.55337, -51.46253));
+	grafo.adicionarNo(new No("54", -23.55449, -51.46221));
+	grafo.adicionarNo(new No("55", -23.55557, -51.46190));
+	
+	grafo.adicionarNo(new No("56", -23.55028, -51.46467));
+	//grafo.adicionarNo(new No("57", -23., -51.46963));
+	//grafo.adicionarNo(new No("58", -23.54950, -51.46963));
+	grafo.adicionarNo(new No("59", -23.55142, -51.46431));
+	grafo.adicionarNo(new No("60", -23.55253, -51.46400));
+	
+	grafo.adicionarNo(new No("61", -23.55367, -51.46364));
+	grafo.adicionarNo(new No("62", -23.55474, -51.46334));
+	grafo.adicionarNo(new No("63", -23.55112, -51.46582));
+	grafo.adicionarNo(new No("64", -23.55223, -51.46477));
+	grafo.adicionarNo(new No("65", -23.55282, -51.46515));
+	
+	grafo.adicionarNo(new No("66", -23.55313, -51.46440));
+	grafo.adicionarNo(new No("67", -23.55385, -51.46444));
+	
+	grafo.adicionarNo(new No("59,5", -23.55236, -51.46404));
+	grafo.adicionarNo(new No("67", -23.55271, -51.46400));
 
         // adicionamos as arestas, que representam as ligações entre os pontos (ruas), ao grafo, com pesos para cada situação:
         // peso 0.0 = rua recém reformada
@@ -112,7 +130,7 @@ public class Main {
         grafo.adicionarAresta("42", "44", 1.0);
 
         grafo.adicionarAresta("44", "32", 1.0);
-        grafo.adicionarAresta("44", "42", 1.0);
+        grafo.adicionarAresta("44", "42", 10.0);
         grafo.adicionarAresta("44", "43", 1.0);
         grafo.adicionarAresta("44", "45", 1.0);
 
