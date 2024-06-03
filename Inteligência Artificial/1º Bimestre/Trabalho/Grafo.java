@@ -16,6 +16,10 @@ public class Grafo {
         return nos.get(nome);
     }
 
+    public boolean procuraNo (String nome){
+        return nos.containsKey(nome); //vai retornar se existe o nó ou não
+    }
+
     public void adicionarAresta(String de, String para, double peso) { //método para adiconar as arestas
         No noDe = nos.get(de); // o nó origem
         No noPara = nos.get(para); // o nó destino
