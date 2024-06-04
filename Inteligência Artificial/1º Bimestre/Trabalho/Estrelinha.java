@@ -1,6 +1,16 @@
-import java.util.*;
+import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Estrelinha {
+    Scanner s = new Scanner(System.in);
 
     public static List<No> melhorCaminho (Grafo grafo, String inicial, String objetivofinal) { //função que encontra o melhor caminho, dado o grafo, o inicio e o final
         No inicio = grafo.getNo(inicial); //cria-se um nó interno, com as características do nó inicial
@@ -65,6 +75,7 @@ public class Estrelinha {
     private static double calcularHeuristica(No noAtual, No objetivo) { //calculamos a heurística com base na distância euclidiana
         double dx = noAtual.getX() - objetivo.getX();
         double dy = noAtual.getY() - objetivo.getY();
+        //System.out.println(Math.sqrt((dx * dx) + (dy * dy)));
         return Math.sqrt((dx * dx) + (dy * dy));
     }    
 

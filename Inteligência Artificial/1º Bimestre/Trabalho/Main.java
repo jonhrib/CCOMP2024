@@ -1,5 +1,5 @@
-import java.util.List;
 import java.util.Scanner;
+import java.util.List;
 
 public class Main {
     public static void main(String args []) {
@@ -28,7 +28,7 @@ public class Main {
 		grafo.adicionarNo(new No("16", -23.55341, -51.45768));
 		grafo.adicionarNo(new No("17", -23.55448, -51.45737));
 		grafo.adicionarNo(new No("18", -23.54838, -51.46000));
-		//grafo.adicionarNo(new No("19", -23.54950, -51.46963));
+		grafo.adicionarNo(new No("19", -23.54863, -51.45957));
 		grafo.adicionarNo(new No("20", -23.54922, -51.46012));
 		
 		grafo.adicionarNo(new No("21", -23.55031, -51.45978));
@@ -47,7 +47,8 @@ public class Main {
 		grafo.adicionarNo(new No("32", -23.55213, -51.46042));
 		grafo.adicionarNo(new No("33", -23.55285, -51.46024));
 		grafo.adicionarNo(new No("34", -23.55393, -51.45995));
-		//grafo.adicionarNo(new No("35", -23.54950, -51.46963));
+		grafo.adicionarNo(new No("35", -23.554491, -51.459867));
+		
 		
 		grafo.adicionarNo(new No("36", -23.55500, -51.45964));
 		grafo.adicionarNo(new No("37", -23.55608, -51.45933));
@@ -61,10 +62,8 @@ public class Main {
 		grafo.adicionarNo(new No("44", -23.55231, -51.46150));
 		grafo.adicionarNo(new No("45", -23.55313, -51.46139));
 		
-		//parei aqui
-		
 		grafo.adicionarNo(new No("46", -23.55420, -51.46107));
-		//grafo.adicionarNo(new No("47", -23.54950, -51.46963));
+		grafo.adicionarNo(new No("47", -23.554705, -51.460905));
 		grafo.adicionarNo(new No("48", -23.55528, -51.46077));
 		grafo.adicionarNo(new No("49", -23.54897, -51.46380));
 		grafo.adicionarNo(new No("50", -23.55004, -51.46348));
@@ -76,8 +75,8 @@ public class Main {
 		grafo.adicionarNo(new No("55", -23.55557, -51.46190));
 		
 		grafo.adicionarNo(new No("56", -23.55028, -51.46467));
-		//grafo.adicionarNo(new No("57", -23., -51.46963));
-		//grafo.adicionarNo(new No("58", -23.54950, -51.46963));
+		grafo.adicionarNo(new No("57", -23.55064, -51.46395));
+		grafo.adicionarNo(new No("58", -23.54950, -51.46963));
 		grafo.adicionarNo(new No("59", -23.55142, -51.46431));
 		grafo.adicionarNo(new No("59.5", -23.552397, -51.464040));
 		grafo.adicionarNo(new No("60", -23.55253, -51.46400));
@@ -95,20 +94,20 @@ public class Main {
 		grafo.adicionarNo(new No("59.5", -23.55236, -51.46404));
 		grafo.adicionarNo(new No("67", -23.55271, -51.46400));
 
-	        // adicionamos as arestas, que representam as ligações entre os pontos (ruas), ao grafo, com pesos para cada situação:
-	        // peso 0.0 = rua recém reformada
-	        // peso 1.0 = rua e calçadas em boas condições
-	        // peso 5.0 = calçada com buracos, mas cadeirantes conseguem passar pela rua sem muitos perigos
-	        // peso 10.0 = calçada com buracos, rua perigosa, mas existe possibilidade de períodos menos perigosos, sem caminhões
-	        // peso 100.0 = calçada com buracos ou em condições péssimas, e cadeirantes não podem passar pela rua, visto o perigo, evitar ao máximo
-	
-	        grafo.adicionarAresta("1", "2", 1.0);
-	        grafo.adicionarAresta("1", "6", 1.0);
-	        grafo.adicionarAresta("2", "1", 1.0);
-	        grafo.adicionarAresta("2", "3", 1.0);
-	        grafo.adicionarAresta("2", "7", 1.0);
-	        grafo.adicionarAresta("3", "2", 1.0);
-	        grafo.adicionarAresta("3", "8", 1.0);
+        // adicionamos as arestas, que representam as ligações entre os pontos (ruas), ao grafo, com pesos para cada situação:
+        // peso 0.0 = rua recém reformada
+        // peso 1.0 = rua e calçadas em boas condições
+        // peso 5.0 = calçada com buracos, mas cadeirantes conseguem passar pela rua sem muitos perigos
+        // peso 10.0 = calçada com buracos, rua perigosa, mas existe possibilidade de períodos menos perigosos, sem caminhões
+        // peso 100.0 = calçada com buracos ou em condições péssimas, e cadeirantes não podem passar pela rua, visto o perigo, evitar ao máximo
+
+        grafo.adicionarAresta("1", "2", 1.0);
+        grafo.adicionarAresta("1", "6", 1.0);
+        grafo.adicionarAresta("2", "1", 1.0);
+        grafo.adicionarAresta("2", "3", 1.0);
+        grafo.adicionarAresta("2", "7", 1.0);
+        grafo.adicionarAresta("3", "2", 1.0);
+        grafo.adicionarAresta("3", "8", 1.0);
 		grafo.adicionarAresta("4", "5", 1.0);
 		grafo.adicionarAresta("4", "11", 1.0);
 		grafo.adicionarAresta("5", "4", 1.0);
@@ -172,16 +171,16 @@ public class Main {
 		grafo.adicionarAresta("21", "22", 1.0);
 		grafo.adicionarAresta("21", "30", 1.0);
 		grafo.adicionarAresta("22", "21", 1.0);
-	        grafo.adicionarAresta("22", "23", 1.0);
-	        grafo.adicionarAresta("22", "24", 1.0);
-	        grafo.adicionarAresta("22", "31", 1.0);
-	        grafo.adicionarAresta("23", "14", 1.0);
-	        grafo.adicionarAresta("23", "22", 1.0);
-	        grafo.adicionarAresta("23", "24", 10.0);
-	        grafo.adicionarAresta("24", "22", 1.0);
-	        grafo.adicionarAresta("24", "23", 1.0);
-	        grafo.adicionarAresta("24", "25", 1.0);
-	        grafo.adicionarAresta("24", "32", 1.0);
+        grafo.adicionarAresta("22", "23", 1.0);
+        grafo.adicionarAresta("22", "24", 1.0);
+        grafo.adicionarAresta("22", "31", 1.0);
+        grafo.adicionarAresta("23", "14", 1.0);
+        grafo.adicionarAresta("23", "22", 1.0);
+        grafo.adicionarAresta("23", "24", 10.0);
+        grafo.adicionarAresta("24", "22", 1.0);
+        grafo.adicionarAresta("24", "23", 1.0);
+        grafo.adicionarAresta("24", "25", 1.0);
+        grafo.adicionarAresta("24", "32", 1.0);
 		grafo.adicionarAresta("25", "15", 1.0);
 		grafo.adicionarAresta("25", "24", 1.0);
 		grafo.adicionarAresta("25", "26", 1.0);
@@ -205,12 +204,12 @@ public class Main {
 		grafo.adicionarAresta("30", "31", 1.0);
 		grafo.adicionarAresta("30", "41", 1.0);
 
-	        grafo.adicionarAresta("31", "22", 1.0);
-	        grafo.adicionarAresta("31", "30", 1.0);
-	        grafo.adicionarAresta("31", "42", 1.0);
-	        grafo.adicionarAresta("32", "24", 1.0);
-	        grafo.adicionarAresta("32", "33", 1.0);
-	        grafo.adicionarAresta("32", "44", 1.0);
+        grafo.adicionarAresta("31", "22", 1.0);
+        grafo.adicionarAresta("31", "30", 1.0);
+        grafo.adicionarAresta("31", "42", 1.0);
+        grafo.adicionarAresta("32", "24", 1.0);
+        grafo.adicionarAresta("32", "33", 1.0);
+        grafo.adicionarAresta("32", "44", 1.0);
 		grafo.adicionarAresta("33", "25", 1.0);
 		grafo.adicionarAresta("33", "32", 1.0);
 		grafo.adicionarAresta("33", "34", 1.0);
@@ -240,17 +239,17 @@ public class Main {
 		grafo.adicionarAresta("41", "40", 1.0);
 		grafo.adicionarAresta("41", "42", 1.0);
 		grafo.adicionarAresta("41", "51", 1.0);
-	        grafo.adicionarAresta("42", "31", 1.0);
-	        grafo.adicionarAresta("42", "41", 1.0);
-	        grafo.adicionarAresta("42", "43", 1.0);
-	        grafo.adicionarAresta("42", "44", 1.0);
+        grafo.adicionarAresta("42", "31", 1.0);
+        grafo.adicionarAresta("42", "41", 1.0);
+        grafo.adicionarAresta("42", "43", 1.0);
+        grafo.adicionarAresta("42", "44", 1.0);
 		grafo.adicionarAresta("43", "42", 1.0);
 		grafo.adicionarAresta("43", "44", 1.0);
 		grafo.adicionarAresta("43", "52", 1.0);
-	        grafo.adicionarAresta("44", "32", 1.0);
-	        grafo.adicionarAresta("44", "42", 10.0);
-	        grafo.adicionarAresta("44", "43", 1.0);
-	        grafo.adicionarAresta("44", "45", 1.0);
+        grafo.adicionarAresta("44", "32", 1.0);
+        grafo.adicionarAresta("44", "42", 10.0);
+        grafo.adicionarAresta("44", "43", 1.0);
+        grafo.adicionarAresta("44", "45", 1.0);
 		grafo.adicionarAresta("45", "33", 1.0);
 		grafo.adicionarAresta("45", "44", 1.0);
 		grafo.adicionarAresta("45", "46", 1.0);
@@ -258,12 +257,14 @@ public class Main {
 		grafo.adicionarAresta("46", "34", 1.0);
 		grafo.adicionarAresta("46", "45", 1.0);
 		grafo.adicionarAresta("46", "47", 1.0);
-		grafo.adicionarAresta("46", "48", 1.0);
+		//grafo.adicionarAresta("46", "48", 1.0);
 		grafo.adicionarAresta("46", "54", 1.0);
 		grafo.adicionarAresta("47", "35", 1.0);
 		grafo.adicionarAresta("47", "46", 1.0);
+		grafo.adicionarAresta("47", "48", 1.0);
 		grafo.adicionarAresta("48", "36", 1.0);
-		grafo.adicionarAresta("48", "46", 1.0);
+		//grafo.adicionarAresta("48", "46", 1.0);
+		grafo.adicionarAresta("48", "47", 1.0);
 		grafo.adicionarAresta("48", "55", 1.0);
 		grafo.adicionarAresta("49", "50", 1.0);
 		grafo.adicionarAresta("50", "40", 1.0);
@@ -290,20 +291,25 @@ public class Main {
 		grafo.adicionarAresta("55", "48", 1.0);
 		grafo.adicionarAresta("55", "54", 1.0);
 		grafo.adicionarAresta("56", "50", 1.0);
+		grafo.adicionarAresta("56", "59", 1.0);
 		grafo.adicionarAresta("56", "58", 1.0);
-		grafo.adicionarAresta("57", "58", 1.0);
+		//grafo.adicionarAresta("57", "58", 1.0);
 		grafo.adicionarAresta("58", "56", 1.0);
-		grafo.adicionarAresta("58", "57", 1.0);
+		//grafo.adicionarAresta("58", "57", 1.0);
 		grafo.adicionarAresta("58", "59", 1.0);
 		grafo.adicionarAresta("59", "51", 1.0);
 		grafo.adicionarAresta("59", "58", 1.0);
 		grafo.adicionarAresta("59", "59.5", 1.0);
 		grafo.adicionarAresta("59", "63", 1.0);
+		grafo.adicionarAresta("59.5", "59", 1.0);
+		grafo.adicionarAresta("59.5", "60", 1.0);
 		grafo.adicionarAresta("60", "52", 1.0);
 		grafo.adicionarAresta("60", "59.5", 1.0);
 		grafo.adicionarAresta("60", "60.5", 1.0);
 		grafo.adicionarAresta("60", "64", 1.0);
 		grafo.adicionarAresta("60", "66", 1.0);
+		grafo.adicionarAresta("60.5", "60", 1.0);
+		grafo.adicionarAresta("60.5", "61", 1.0);
 
 		grafo.adicionarAresta("61", "53", 1.0);
 		grafo.adicionarAresta("61", "60.5", 1.0);
@@ -385,7 +391,6 @@ public class Main {
 				}
 				contc++;
 			}
-			System.out.println();
 			System.out.println("-----------------------------------------------------------------");
 		}
 		if (e == 2){
