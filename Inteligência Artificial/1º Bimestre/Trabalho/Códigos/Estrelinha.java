@@ -29,14 +29,14 @@ public class Estrelinha {
 
         // inicializamos os valores para o nó inicial
         g.put(inicio, 0.0); //o custo para chegar até o nó inicial é zero //se a chave já existe ele sobreescreve
-        f.put(inicio, calcularHeuristica(inicio, objetivo)); //o valor f é 0 + a heurística do nó inicial e objetivo
+        f.put(inicio, heuristica(inicio, objetivo)); //o valor f é 0 + a heurística do nó inicial e objetivo
 
         // criamos uma fila de prioridade para nós que serão explorados, a lista aberta
         PriorityQueue<No> ListaAberta = new PriorityQueue<>(1,Comparator.comparingDouble(no -> f.get(no))); //nós que precisamos explorar ainda, colocando em prioridade os nós que tem o menor valor f  //https://www.alura.com.br/artigos/java-8-lambda-ou-method-reference-entenda-a-diferenca?utm_term=&utm_campaign=%5BSearch%5D+%5BPerformance%5D+-+Dynamic+Search+Ads+-+Artigos+e+Conteúdos&utm_source=adwords&utm_medium=ppc&hsa_acc=7964138385&hsa_cam=11384329873&hsa_grp=111087461203&hsa_ad=687448474447&hsa_src=g&hsa_tgt=aud-396128415587:dsa-2276348409543&hsa_kw=&hsa_mt=&hsa_net=adwords&hsa_ver=3&gad_source=1&gclid=CjwKCAjwjeuyBhBuEiwAJ3vuoVL5j_YcBJMnh5H4BTyaAo-I9NSx8aV8voqL_FDkDdg-YAD_ekBwQBoC-foQAvD_BwE //https://www.coffeeandtips.com/post/usando-comparator-comparing-para-ordenar-java-stream
         Set<No> ListaFechada = new HashSet<>(); //contém os nós que já exploramos //usamos hashset pq não precisamos de ordenação aqui, e é mais rápido
 
         // criamos outro map, para armazenar o antecessor de cada nó, para que seja possível reconstuir o caminho
-        Map<No, No> veioDe = new HashMap<>(); //o map é de nó para nó
+        Map<No, No> antecessores = new HashMap<>(); //o map é de nó para nó
 
         ListaAberta.add(inicio); // adicionamos o nó inicial na lista aberta, para iniciar o processo
 
@@ -44,7 +44,7 @@ public class Estrelinha {
             No atual = ListaAberta.poll(); //atual recebe o primeiro nó da lista aberta, ou seja, o com o menor valor f (remove o nó assim que dá o poll)
 
             if (atual.equals(objetivo)) { //se o nó atual é igual ao ovbjetivo
-                return reconstruirCaminho(veioDe, atual); //retornamos o caminho reconstruído desse nó
+                return caminho(antecessores, atual); //retornamos o caminho reconstruído desse nó
             }
 
             ListaFechada.add(atual); //adicionamos o nó na lista fechada, indicando que ele já foi explorado
@@ -58,9 +58,9 @@ public class Estrelinha {
                 double gaux = g.get(atual) + aresta.getPeso(); // calculamos o valor de g para o filho atual, que seria o g dele mais o custo para chegar, ou seja, o peso da aresta
 
                 if (gaux < g.get(filho)) { // se o valor auxiliar calculado é menor que o g anterior do filho
-                    veioDe.put(filho, atual); // adicionamos no registro de caminho esse nó
+                    antecessores.put(filho, atual); // adicionamos no registro de caminho esse nó
                     g.put(filho, gaux); //atualizamos o valor de g, no filho que estamos
-                    f.put(filho, gaux + calcularHeuristica(filho, objetivo)); // atualizamos o valor de f, calculando com a heurística e somando ao valor de g
+                    f.put(filho, gaux + heuristica(filho, objetivo)); // atualizamos o valor de f, calculando com a heurística e somando ao valor de g
 
                     if (!ListaAberta.contains(filho)) { // se esse filho não estiver na lista aberta ainda 
                         ListaAberta.add(filho); // adicionamos ele, para que possamos verificar seus filhos
@@ -72,14 +72,14 @@ public class Estrelinha {
         return null; // se, no processo de busca, não retornarmos o nó encontrado, quer dizer que o caminho não existe, portanto, retornamos null
     }
 
-    private static double calcularHeuristica(No noAtual, No objetivo) { //calculamos a heurística com base na distância euclidiana
+    private static double heuristica(No noAtual, No objetivo) { //calculamos a heurística com base na distância euclidiana
         double dx = noAtual.getX() - objetivo.getX();
         double dy = noAtual.getY() - objetivo.getY();
         //System.out.println(Math.sqrt((dx * dx) + (dy * dy)));
         return Math.sqrt((dx * dx) + (dy * dy));
     }    
 
-    private static List<No> reconstruirCaminho(Map<No, No> veioDe, No atual) { //reconstrói o caminho do objetivo até o nó inicial, pelo map 'veioDe' e nó atual
+    private static List<No> caminho(Map<No, No> veioDe, No atual) { //reconstrói o caminho do objetivo até o nó inicial, pelo map 'veioDe' e nó atual
         List<No> caminho = new ArrayList<>(); //adicionaremos o caminho numa lista de nós, ele virá ao contrário, do objetivo até o inicial
         
         while (atual != null) { //enquanto o caminho atual não está vazio ou ainda existe, ou seja, enquanto tem nó para adicionar

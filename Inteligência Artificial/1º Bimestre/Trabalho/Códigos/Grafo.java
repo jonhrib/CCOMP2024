@@ -8,7 +8,7 @@ public class Grafo {
         this.nos = new HashMap<>(); //inicializa o map
     }
 
-    public void adicionarNo(No no) { //adicionamos o nó, com a chave sendo seu nome
+    public void adicionaNo(No no) { //adicionamos o nó, com a chave sendo seu nome
         nos.put(no.getNome(), no);
     }
 
@@ -20,11 +20,11 @@ public class Grafo {
         return nos.containsKey(nome); //vai retornar se existe o nó ou não
     }
 
-    public void adicionarAresta(String de, String para, double peso) { //método para adiconar as arestas
+    public void adicionaAresta(String de, String para, double peso) { //método para adiconar as arestas
         No noDe = nos.get(de); // o nó origem
         No noPara = nos.get(para); // o nó destino
         if (noDe != null && noPara != null) { // se os dois nós existirem
-            noDe.adicionarAresta(new Aresta(noPara, peso)); //criamos uma nova aresta no nó origem, com o destino sendo o nó 'para', com o peso dado
+            noDe.adicionaAresta(new Aresta(noPara, peso)); //criamos uma nova aresta no nó origem, com o destino sendo o nó 'para', com o peso dado
         }
     }
 }

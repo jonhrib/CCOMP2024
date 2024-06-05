@@ -30,7 +30,7 @@ public class No {
         return arestas;
     }
 
-    public void adicionarAresta(Aresta aresta) {
+    public void adicionaAresta(Aresta aresta) {
         arestas.add(aresta);
     }
 }
