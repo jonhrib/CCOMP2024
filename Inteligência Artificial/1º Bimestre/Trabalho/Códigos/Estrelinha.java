@@ -57,7 +57,7 @@ public class Estrelinha {
 
                 double gaux = g.get(atual) + aresta.getPeso(); // calculamos o valor de g para o filho atual, que seria o g dele mais o custo para chegar, ou seja, o peso da aresta
 
-                if (gaux < g.get(filho)) { // se o valor auxiliar calculado é menor que o g anterior do filho
+                if (gaux < g.get(filho)) { // se o valor auxiliar calculado é menor que o g anterior do filho //se é menor encontramos um caminho mais curto
                     antecessores.put(filho, atual); // adicionamos no registro de caminho esse nó
                     g.put(filho, gaux); //atualizamos o valor de g, no filho que estamos
                     f.put(filho, gaux + heuristica(filho, objetivo)); // atualizamos o valor de f, calculando com a heurística e somando ao valor de g
