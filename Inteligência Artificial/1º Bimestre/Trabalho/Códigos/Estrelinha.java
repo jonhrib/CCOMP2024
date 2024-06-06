@@ -79,12 +79,12 @@ public class Estrelinha {
         return Math.sqrt((dx * dx) + (dy * dy));
     }    
 
-    private static List<No> caminho(Map<No, No> veioDe, No atual) { //reconstrói o caminho do objetivo até o nó inicial, pelo map 'veioDe' e nó atual
+    private static List<No> caminho(Map<No, No> antecessores, No atual) { //reconstrói o caminho do objetivo até o nó inicial, pelo map 'veioDe' e nó atual
         List<No> caminho = new ArrayList<>(); //adicionaremos o caminho numa lista de nós, ele virá ao contrário, do objetivo até o inicial
         
         while (atual != null) { //enquanto o caminho atual não está vazio ou ainda existe, ou seja, enquanto tem nó para adicionar
             caminho.add(atual); //adicionamos o nó atual ao caminho total
-            atual = veioDe.get(atual); //atual recebe o seu antecessor, armazenado no map
+            atual = antecessores.get(atual); //atual recebe o seu antecessor, armazenado no map
         }
 
         Collections.reverse(caminho); //inverte a lista, para que tenhamos o caminho do inicio até o objetivo

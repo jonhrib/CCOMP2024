@@ -100,7 +100,7 @@ public class Main {
         grafo.adicionaAresta("1", "2",1.0);
         grafo.adicionaAresta("1", "6", 1.0);
         grafo.adicionaAresta("2", "1", 5.0);
-        grafo.adicionaAresta("2", "3", 1.0);
+        grafo.adicionaAresta("2", "3", 100.0);
         grafo.adicionaAresta("2", "7", 1.0);
         grafo.adicionaAresta("3", "2", 5.0);
         grafo.adicionaAresta("3", "8", 0.0);
@@ -116,7 +116,7 @@ public class Main {
 		grafo.adicionaAresta("7", "2", 1.0);
 		grafo.adicionaAresta("7", "6", 5.0); 
 		grafo.adicionaAresta("7", "8", 1.0);
-		grafo.adicionaAresta("7", "14", 1.0);
+		grafo.adicionaAresta("7", "14", 100.0);
 		grafo.adicionaAresta("8", "3", 0.0);
 		grafo.adicionaAresta("8", "7", 5.0);
 		grafo.adicionaAresta("8", "9", 1.0);
@@ -149,7 +149,7 @@ public class Main {
 		grafo.adicionaAresta("16", "15", 0.0);
 		grafo.adicionaAresta("16", "17", 10.0);
 		grafo.adicionaAresta("16", "26", 1.0);
-		grafo.adicionaAresta("17", "10", 1.0);
+		grafo.adicionaAresta("17", "10", 100.0);
 		grafo.adicionaAresta("17", "16", 1.0);
 		grafo.adicionaAresta("17", "27", 1.0);
 		grafo.adicionaAresta("18", "11", 1.0);
@@ -182,7 +182,7 @@ public class Main {
 		grafo.adicionaAresta("25", "26", 5.0);
 		grafo.adicionaAresta("25", "33", 0.0);
 		grafo.adicionaAresta("26", "16", 1.0);
-		grafo.adicionaAresta("26", "25", 1.0);
+		grafo.adicionaAresta("26", "25", 100.0);
 		grafo.adicionaAresta("26", "27", 0.0);
 		grafo.adicionaAresta("26", "34", 1.0);
 		grafo.adicionaAresta("27", "17", 1.0);
@@ -205,7 +205,7 @@ public class Main {
         grafo.adicionaAresta("31", "42", 1.0);
         grafo.adicionaAresta("32", "24", 1.0);
         grafo.adicionaAresta("32", "33", 5.0);
-        grafo.adicionaAresta("32", "44", 1.0);
+        grafo.adicionaAresta("32", "44", 100.0);
 		grafo.adicionaAresta("33", "25", 0.0);
 		grafo.adicionaAresta("33", "32", 10.0);
 		grafo.adicionaAresta("33", "34", 1.0);
@@ -235,7 +235,7 @@ public class Main {
 		grafo.adicionaAresta("41", "40", 1.0);
 		grafo.adicionaAresta("41", "42", 1.0);
 		grafo.adicionaAresta("41", "51", 0.0);
-        grafo.adicionaAresta("42", "31", 1.0);
+        grafo.adicionaAresta("42", "31", 100.0);
         grafo.adicionaAresta("42", "41", 1.0);
         grafo.adicionaAresta("42", "43", 10.0);
         grafo.adicionaAresta("42", "44", 1.0);
@@ -277,7 +277,7 @@ public class Main {
 		grafo.adicionaAresta("52", "53", 1.0);
 		grafo.adicionaAresta("52", "60", 10.0);
 		grafo.adicionaAresta("53", "45", 0.0);
-		grafo.adicionaAresta("53", "52", 1.0);
+		grafo.adicionaAresta("53", "52", 100.0);
 		grafo.adicionaAresta("53", "54", 5.0);
 		grafo.adicionaAresta("53", "61", 0.0);
 		grafo.adicionaAresta("54", "46", 1.0);
@@ -294,7 +294,7 @@ public class Main {
 		//grafo.adicionaAresta("58", "57", 1.0);
 		grafo.adicionaAresta("58", "59", 0.0);
 		grafo.adicionaAresta("59", "51", 1.0);
-		grafo.adicionaAresta("59", "58", 1.0);
+		grafo.adicionaAresta("59", "58", 100.0);
 		grafo.adicionaAresta("59", "59.5", 5.0);
 		grafo.adicionaAresta("59", "63", 1.0);
 		grafo.adicionaAresta("59.5", "59", 1.0);
@@ -311,7 +311,7 @@ public class Main {
 		grafo.adicionaAresta("61", "60.5", 1.0);
 		grafo.adicionaAresta("61", "62", 5.0);
 		grafo.adicionaAresta("61", "67", 0.0);
-		grafo.adicionaAresta("62", "54", 1.0);
+		grafo.adicionaAresta("62", "54", 100.0);
 		grafo.adicionaAresta("62", "61", 0.0);
 		grafo.adicionaAresta("63", "59", 1.0);
 		grafo.adicionaAresta("64", "60", 5.0);
