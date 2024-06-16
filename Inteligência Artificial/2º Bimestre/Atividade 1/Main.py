@@ -9,5 +9,7 @@ print(dados)
 dados['Teste'] = 0
 dados['Treinamento'] = 0
 
+dados.dropna()
+
 dados.to_csv('C:\\Users\\jonhv\\OneDrive\\Documentos\\IA2024\\Atividade13-06\\BaseDados_Nova.csv', index=False)
 
